@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 *,
 *::before,
@@ -17,9 +17,9 @@
 body {
   min-height: 100vh;
   color: rgb(201, 197, 197);
-  background-color: rgb(27, 26, 26);
+  background-color: #fc8d688e;
   transition: background-color 0.5s, white 0.5s;
-  font-family: 'Shantell Sans', cursive;
+  font-family: 'Inter', sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

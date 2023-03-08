@@ -5,7 +5,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+    "types": [
+      "vue3-toastify/global"
+    ]
   },
 
   "references": [

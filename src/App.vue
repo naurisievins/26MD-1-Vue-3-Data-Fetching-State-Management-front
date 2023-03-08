@@ -22,7 +22,7 @@ nav {
 }
 
 nav a {
-  color: #05502b;
+  color: #2e302f;
   text-decoration: none;
   font-size: 1.4rem;
   transition: color 0.3s ease-in-out;
@@ -31,12 +31,12 @@ nav a {
 }
 
 nav a:hover {
-  text-shadow: 2px 2px 4px #423d3d;
-  border-bottom-color: #66666625;
+  text-shadow: 1px 2px 4px #666262;
+  border-bottom-color: #969393;
 }
 nav .router-link-active {
-  outline: none; /* Remove the default focus outline */
-  border-bottom-color: #ccc;
+  outline: none;
+  border-bottom-color: #2e302f;
 }
 
 </style>
