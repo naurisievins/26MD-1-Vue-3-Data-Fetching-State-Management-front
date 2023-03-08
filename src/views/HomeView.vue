@@ -2,7 +2,9 @@
 
   <main>
     <h2 class="title">Had a bad day? Have a joke!</h2>
-    <button @click="store.getAllJokes">Load other jokes</button>
+    <button class="bounce" @click="store.getAllJokes">Load other jokes</button>
+    <span class="container__msg" v-if="store.loadingAllJokes">Loading...</span>
+    <span class="container__msg" v-if="store.allJokesError">Error loading jokes. Please try again.</span>
     <div class="container">
       <div class="container__joke" v-for="joke in store.allJokes" :key="joke.id">
         <span>{{ joke.joke }}</span>
@@ -58,28 +60,36 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    border-radius: 5px;
     width: 100%;
     gap: 20px;
+    padding: 20px;
   }
+
   .container__joke {
     display: flex;
     align-items: center;
-    font-size: 1.1rem;
-    line-height: 2;
+    font-size: 1rem;
+    line-height: 1.8;
     min-width: 300px;
     width: 45%;
     min-height: 200px;
     padding: 20px;
     word-break: break-word;
-    background-color: #C7D3D4FF;
-    color: rgb(17, 17, 17);
+    background-color: #121414;
+    color: rgb(204, 198, 198);
     border: 1px solid rgb(182, 180, 180);
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    opacity: 0.8;
   }
 
   .container__joke:hover {
-    opacity: 0.8;
+    opacity: 0.7;
+  }
+
+  .container__msg {
+    color: rgb(211, 208, 208);
+    padding: 0 10px;
   }
 
   .container__fav_btn {
@@ -105,16 +115,52 @@
   }
 
   .title {
+    transform: rotate(3deg);
+    text-shadow: 10px 10px 25px rgb(255, 254, 250),
+    -10px 10px 25px rgb(255, 254, 250),
+    -10px -10px 25px rgb(255, 254, 250),
+    10px -10px 25px rgb(255, 254, 250);
     font-size: 2rem;
     text-align: center;
     font-weight: 600;
-    padding: 15px 10px;
+    padding: 30px 10px;
     color: rgb(24, 26, 25);
   }
+
+  @keyframes bounce {
+  0% {
+    transform: scale(1,1) translate(0px, 0px);
+  }
+  
+  30%{
+    transform: scale(1,0.9) translate(0px, 5px); 
+  }
+
+  75%{
+    transform: scale(1,1.1) translate(0px, -10px); 
+  }
+  
+  100% {
+    transform: scale(1,1) translate(0px, 0px);
+  }
+}
+
+.bounce {
+  text-align:center;
+  margin:0 auto;
+  margin-bottom: 3px;
+  padding: 5px 15px;  
+  animation: bounce 0.7s infinite;
+}
 
 @media screen and (max-width: 700px) {
   .container__joke {
     width: 100%;
+  }
+
+  .container {
+    padding: 5px 0;
+    box-shadow: none;
   }
 }
 

@@ -12,7 +12,8 @@ button {
   font-family: 'Orbitron', sans-serif;
   padding: 5px 10px;
   border: none;
-  background-color: #8a3f2767;
+  background: #8a402734;
+  color: #a1a1a1;
   margin: 20px 10px;
   border-radius: 7px;
   cursor: pointer;
@@ -21,7 +22,7 @@ button {
 }
 
 button:hover {
-  background-color: #8a402734;
+  background-color: #8a402721;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 

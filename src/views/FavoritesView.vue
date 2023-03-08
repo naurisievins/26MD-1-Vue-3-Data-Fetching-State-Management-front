@@ -1,8 +1,18 @@
 <template>
 
-  <h2 class="title">My Favorite Jokes <span class="fav_ico">&#9733;</span></h2>
+  <h2 class="title">
+    My Favorite Jokes <span class="fav_ico">&#9733;</span>
+  </h2>
+  <span class="container__msg" v-if="store.loadingFavoriteJokes">Loading...</span>
+  <span class="container__msg" v-if="store.favoriteJokesError">Error loading jokes. Please try again.</span>
   <div class="container">
-    <span class="container__msg" v-if="!store.favoriteJokes.length">No favorite jokes added yet!</span>
+    <span
+      class="container__msg"
+      v-if="!store.favoriteJokes.length && !store.loadingFavoriteJokes && !store.favoriteJokesError"
+    >
+    No favorite jokes added yet!
+  </span>
+
     <div class="container__joke" v-for="joke in store.favoriteJokes" :key="joke.id">
       <span>{{ joke.joke }}</span>
       <div class="container__remove_btn">
@@ -44,10 +54,6 @@ export default {
 
 .container__remove_btn:hover {
   color: rgb(126, 60, 60);
-}
-
-.container__msg {
-  text-align: center;
 }
 
 .title .fav_ico {

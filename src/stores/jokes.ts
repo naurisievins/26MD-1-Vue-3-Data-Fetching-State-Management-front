@@ -26,18 +26,38 @@ export const store = reactive({
   allJokes: [] as Joke[],
   favoriteJokes: [] as Joke[],
   favoriteIds: [] as number[],
+  loadingAllJokes: false,
+  loadingFavoriteJokes: false,
+  allJokesError: false,
+  favoriteJokesError: false,
 
   getAllJokes() {
+    this.loadingAllJokes = true
     axios
       .get('https://v2.jokeapi.dev/joke/Programming?type=single&amount=10')
-      .then(({ data }) => (this.allJokes = [...data.jokes]))
+      .then(({ data }) => {
+        this.allJokes = [...data.jokes]
+        this.loadingAllJokes = false
+      })
+      .catch(() => {
+        this.loadingAllJokes = false
+        this.allJokesError = true
+      })
   },
 
   getFavoriteJokes() {
-    axios.get<Joke[]>('http://localhost:3004/get-jokes').then(({ data }) => {
-      this.favoriteJokes = data
-      this.favoriteIds = data.map((joke) => joke.id)
-    })
+    this.loadingFavoriteJokes = true
+    axios
+      .get<Joke[]>('http://localhost:3004/get-jokes')
+      .then(({ data }) => {
+        this.favoriteJokes = data
+        this.favoriteIds = data.map((joke) => joke.id)
+        this.loadingFavoriteJokes = false
+      })
+      .catch(() => {
+        this.loadingFavoriteJokes = false
+        this.favoriteJokesError = true
+      })
   },
 
   saveJoke(joke: Joke) {

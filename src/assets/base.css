@@ -17,7 +17,8 @@
 body {
   min-height: 100vh;
   color: rgb(201, 197, 197);
-  background-color: #fc8d688e;
+  background: url(src/assets/images/bg.jpg) no-repeat center center fixed;
+  background-size: cover;
   transition: background-color 0.5s, white 0.5s;
   font-family: 'Inter', sans-serif;
   text-rendering: optimizeLegibility;
