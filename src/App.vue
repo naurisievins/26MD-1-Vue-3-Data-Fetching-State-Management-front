@@ -1,7 +1,5 @@
-<script setup lang="ts">
-</script>
-
 <template>
+
   <header>
     <div class="wrapper">
       <nav>
@@ -12,9 +10,11 @@
   </header>
 
   <RouterView />
+
 </template>
 
 <style scoped>
+
 nav {
   display: flex;
   z-index: 1;

@@ -30,6 +30,7 @@
 </template>
 
 <script lang="ts">
+
   import { store } from '../stores/jokes'
   import type { Joke } from '../stores/jokes';
 
@@ -128,44 +129,44 @@
   }
 
   .bounce {
-  text-align:center;
-  margin:0 auto;
-  margin-bottom: 3px;
-  padding: 5px 15px;  
-  animation: bounce 0.7s infinite;
-  user-select: none;
-}
+    text-align:center;
+    margin:0 auto;
+    margin-bottom: 3px;
+    padding: 5px 15px;  
+    animation: bounce 0.7s infinite;
+    user-select: none;
+  }
 
   /* Bouncing button animation */
 
   @keyframes bounce {
-  0% {
-    transform: scale(1,1) translate(0px, 0px);
-  }
-  
-  30%{
-    transform: scale(1,0.9) translate(0px, 5px); 
+    0% {
+      transform: scale(1,1) translate(0px, 0px);
+    }
+    
+    30%{
+      transform: scale(1,0.9) translate(0px, 5px); 
+    }
+
+    75%{
+      transform: scale(1,1.1) translate(0px, -10px); 
+    }
+    
+    100% {
+      transform: scale(1,1) translate(0px, 0px);
+    }
   }
 
-  75%{
-    transform: scale(1,1.1) translate(0px, -10px); 
-  }
-  
-  100% {
-    transform: scale(1,1) translate(0px, 0px);
-  }
-}
+  @media screen and (max-width: 700px) {
+    .container__joke {
+      width: 100%;
+    }
 
-@media screen and (max-width: 700px) {
-  .container__joke {
-    width: 100%;
+    .container {
+      padding: 5px 0;
+      box-shadow: none;
+    }
   }
-
-  .container {
-    padding: 5px 0;
-    box-shadow: none;
-  }
-}
 
 </style>
 

@@ -24,40 +24,41 @@
 </template>
 
 <script lang="ts">
+
   import { store } from '../stores/jokes'
 
-export default {
-  data() {
-    return {
-      store
-    };
-  },
+  export default {
+    data() {
+      return {
+        store
+      };
+    },
 
-  methods: {},
+    methods: {},
 
-  mounted() {},
-};
+    mounted() {},
+  };
 
 </script>
 
 <style>
 
-.container__remove_btn {
-  margin-left: auto;
-  padding-left: 10px;
-  align-self: center;
-  font-size: 2rem;
-  transition: 0.7s;
-  cursor: pointer;
-  color: rgb(121, 8, 8);
-}
+  .container__remove_btn {
+    margin-left: auto;
+    padding-left: 10px;
+    align-self: center;
+    font-size: 2rem;
+    transition: 0.7s;
+    cursor: pointer;
+    color: rgb(121, 8, 8);
+  }
 
-.container__remove_btn:hover {
-  color: rgb(126, 60, 60);
-}
+  .container__remove_btn:hover {
+    color: rgb(126, 60, 60);
+  }
 
-.title .fav_ico {
-  color: orange;
-}
+  .title .fav_ico {
+    color: orange;
+  }
 
 </style>
