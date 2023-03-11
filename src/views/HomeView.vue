@@ -127,6 +127,17 @@
     color: rgb(24, 26, 25);
   }
 
+  .bounce {
+  text-align:center;
+  margin:0 auto;
+  margin-bottom: 3px;
+  padding: 5px 15px;  
+  animation: bounce 0.7s infinite;
+  user-select: none;
+}
+
+  /* Bouncing button animation */
+
   @keyframes bounce {
   0% {
     transform: scale(1,1) translate(0px, 0px);
@@ -143,14 +154,6 @@
   100% {
     transform: scale(1,1) translate(0px, 0px);
   }
-}
-
-.bounce {
-  text-align:center;
-  margin:0 auto;
-  margin-bottom: 3px;
-  padding: 5px 15px;  
-  animation: bounce 0.7s infinite;
 }
 
 @media screen and (max-width: 700px) {
